@@ -4,7 +4,7 @@ import json
 from chalice import Chalice, Response
 from twilio.base.exceptions import TwilioRestException
 
-from utilities import sms
+from chalicelib import sms
 
 app = Chalice(app_name='sms-app')
 
@@ -41,8 +41,3 @@ def send_sms():
                                 headers={'Content-Type': 'application/json'},
                                 body={'status': 'failure',
                                     'message': 'Please provide the `contact_list` and `message` parameters'})
-
-@app.lambda_function()
-def run(event, context):
-    print(event)
-    return{'lambda function executed'}

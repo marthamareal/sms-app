@@ -4,9 +4,9 @@ from os import environ as env
 from twilio.rest import Client
 
 # Twilio Config
-ACCOUNT_SID = env.get('ACCOUNT_SID')
-AUTH_TOKEN = env.get('AUTH_TOKEN')
-SERVICE_ID = env.get('SERVICE_ID')
+ACCOUNT_SID = env.get('TWILIO_ACCOUNT_SID')
+AUTH_TOKEN = env.get('TWILIO_AUTH_TOKEN')
+SERVICE_ID = env.get('TWILIO_SERVICE_ID')
 
 # Create a Twilio client using account_sid and auth token
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
